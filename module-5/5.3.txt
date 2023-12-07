@@ -1,0 +1,20 @@
+MongoDB operators:
+$eq: equal
+ex: db.test.find({ gender: {$eq: "Male"} })
+
+$ne: not equal
+ex: db.test.find({ gender: {$ne: "Male"} })
+
+$gt:greater than
+ex: db.test.find({ age: {$gt: 18} })
+
+$gte: greater than equal
+ex: db.test.find({ age: {$gte: 18} }).sort({age:1})
+* .sort die ascending or descending order bujhano hoa
+
+$lt: less than
+ex: db.test.find({ age: {$lt: 18} }).sort({age:1})
+
+$lte:less than equal
+ex:db.test.find({ age: {$lte: 18} }).sort({age:-1})
+

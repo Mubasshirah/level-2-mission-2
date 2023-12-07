@@ -1,0 +1,22 @@
+$in: akta array er vitor ja thakbe tar sathe je koyta milbe output e segula show korbe
+-> db.test.find({gender:"Female", age: {$in:[6,8,10,12,14,16]} },{age:1,gender:1}).sort({age:1})
+-> db.test.find({gender:"Female",
+age: {$nin:[6,8,10,12,14,16]} ,
+interests:{$in:["Cooking"]}
+},
+{age:1,gender:1,interests:1})
+.sort({age:1})
+
+$nin: opposite of $in. jegulo milbena seguloo output dekhabe.
+-> db.test.find({gender:"Female", age: {$nin:[6,8,10,12,14,16]} },{age:1,gender:1}).sort({age:1})
+->db.test.find({gender:"Female",
+age: {$nin:[6,8,10,12,14,16]} ,
+    interests:{$nin:["Cooking","Gaming"]}
+},
+{age:1,gender:1,interests:1})
+.sort({age:1})
+
+
+*implicit and:
+db.test.find({gender:"Female", age: {$gte:12,$lte: 18} },{age:1,gender:1}).sort({age:1})
+->akta range er vitore female gulo dibe, only age ar gender dekhabe and ascending order e.

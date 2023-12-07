@@ -1,0 +1,46 @@
+$set : kono document er akta field update korte. tobe primitive value er khetre ata use hoa .non-primitive value er khetre $set use korle puro field tai change hoa jay(non primitive data surute thakleu update hoa primitive hoa jay.jemon array thakle string hoe jete pare). notun akta value add korte non pri er khehtre $set kaj koorena.entire  value change korte kaje lage.
+for primitive data:
+db.test.updateOne({ _id: ObjectId("6406ad63fc13ae5a40000065") },
+    {
+$set: {
+    age:123
+}
+    }
+)
+
+for non primitive data(array): $set use korle array thakle sta string hoa jay. tai non preer khetre $set use kora recommmended na
+db.test.updateOne({ _id: ObjectId("6406ad63fc13ae5a40000065") },
+    {
+$set: {
+    interests:["stalking","bashing"]
+}
+    }
+)
+
+
+$addToSet: notun akta value non-primitive data er khetre add korte ata use hoa. ata kokkhono duplicate value set korbena.duplicate value dile setake array er vitor array akare bosy dibe.
+db.test.updateOne({ _id: ObjectId("6406ad63fc13ae5a40000065") },
+    {
+$addToSet: {
+    interests:"reading"
+}
+    }
+)
+
+
+$each: ak er odhik value non-primitive data er khetre add korte ata use hoa. 
+db.test.updateOne({ _id: ObjectId("6406ad63fc13ae5a40000065") },
+{
+    $addToSet: {
+        interests:{$each:["revealing","horsing"]}
+    }
+})
+
+
+$push:duplicate entry diar jnno ata use korte hbe
+db.test.updateOne({ _id: ObjectId("6406ad63fc13ae5a40000065") },
+{
+    $push: {
+        interests:{$each:["revealing","horsing"]}
+    }
+})

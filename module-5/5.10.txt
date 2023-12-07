@@ -1,0 +1,38 @@
+more exploration about $set
+
+=> object er vitore kono akta field er value change korteu ata use kora jay.
+db.test.updateOne({_id: ObjectId("6406ad65fc13ae5a400000c7")}, 
+{$set: {
+    "address.city":"Buffalo",
+    "address.country":"USA"
+}}
+)
+
+=>array of object er khetre kono akta property ke change korte  following way (arekta .$ use korte hbe)(positional operator)
+db.test.updateOne({_id: ObjectId("6406ad65fc13ae5a400000c7"),
+ "education.major":"Philosophy"}, 
+{$set: {
+    "education.$.major":"politicla science"
+}}
+)
+
+
+db.test.updateOne({_id: ObjectId("6406ad65fc13ae5a400000c7"), "education.institute":"University of Finance and Management in Bialystok"}, 
+{$set: {
+    "education.$.institute":"UB"
+}}
+)
+
+=>$inc:increment korar jnno jemon + or - kore age barano or komanor jnno ata  use hoa
+---------------4 kore barale-------------------
+db.test.updateOne({_id: ObjectId("6406ad65fc13ae5a400000c7")}, 
+{$inc: {
+    age:4
+}}
+)
+-------------------1 kore barale--------------------
+db.test.updateOne({_id: ObjectId("6406ad65fc13ae5a400000c7")}, 
+{$inc: {
+    age:1
+}}
+)

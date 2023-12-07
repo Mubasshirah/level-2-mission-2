@@ -1,0 +1,23 @@
+MongoDB: is a NoSql(non tabular database) database storing data in jso like document,("":""). ideal for managing vast tasks that gives scalability ,flexibility and performance. trusted by giant companies like google, facebook etc.
+
+why mongoDB:
+1.scalable high performance and open source
+2.document-oriented database.
+3.cost effective solutions.
+4.rich ecosystem of tools, documentation and community
+
+mongoDB vs traditional database:
+data model-> documnet-oriented, relational
+schema-> flexible, rigid
+scalability->horizontal and vertical, vertical
+performance->optimized for structural and semi-structural data, optimized for structural queries
+
+in mongoDB database,
+table is called collection
+row is called document
+column is called field
+
+***mongoDB for windows install
+***mongoDB compass auto download hoe jbe jta dia amra graphical user interface experience korte parbo. oikhane akta command line ache.
+*** ar cmd te command diar jnno amra mongoDB shell download korbo. and environmnt variable set korbo.
+***noSQL booster->ata paid

@@ -1,0 +1,27 @@
+logical query operator 
+
+*Explicit and:sob condition e fulfill korte hbe ai khetre ata use hoa.
+db.test.find({
+$and:
+    [
+       {age:{$ne:15}},{age:{$lte:30}},{gender:"Male"}
+    ]
+
+}).project({age:1}).sort({age:1})
+
+*Explicit or:jekono akta condition fulfill korte hobe
+db.test.find({
+$or:
+    [
+       {"skills.name":"PYTHON"},{"skills.name":"JAVASCRIPT"}
+    ]
+
+}).project({skills:1})
+
+-> $in dia o same kaj Explicit or er kaj kora jay.
+db.test.find({"skills.name":{$in:["JAVASCRIPT","PYTHON"]}}).project({skills:1})
+
+***implicit and or 
+
+
+

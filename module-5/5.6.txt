@@ -1,0 +1,16 @@
+element query operator 
+
+$exist: kono akta field kono document e exist kore kina seta dekhabe.
+db.test.find({age:{$exists: true}})
+->document er vitore age field ta exist kore kina. 
+->boolean value dite hobe.
+->field ase nki nai seta khali bolbe. but field er value ki null nki undefined naki string naki boolean sta bolbena
+
+$type: kono field er value ki sta bujhte ata use hoa.
+db.test.find({age:{$type: "string"}})
+-> age field er vitore kono string type value ase kina sta ber korbe.
+
+$size: akta field e koyta value ase. like akta array te koyta element ase.
+jemon kono akta field jdi array hoa.tahole sekhane koyta element ase.
+ex:db.test.find({friends:{$size:0}})
+->ata dia bujhaitese document er  friends field er vitore kontar khetre 0 sonkhok element ase.

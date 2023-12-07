@@ -1,0 +1,8 @@
+insertOne
+insertMany
+find
+findOne
+field filtering: kono akta document er vitor jei jei field ta dorkar segulo ke filltering kore nie asa ke field filtering bole.
+ex: db.test.find({ gender: "Female" },{name:1,email:1,gender:1,age:1,company:1,})
+another way of field filtering:(.project use kore kora jay. tobe eta sudhu find er sathe kaj kore. findOne use korle ar .project kaj korena)
+

@@ -1,0 +1,16 @@
+*array or object type field gulote array er vitor je koyta element ache sob gulo match korar jnno $all use hoa.position ultapalta thakleu problem nai.
+$all use na korle ak er odhik element match koraite gele jdi order o match na kore or kono akta element kom dia hole o empty show korbe.
+ex: db.test.find({
+    interests:{$all:[ "Gaming", "Cooking", "Writing"]}
+}).project({interests:1})
+
+->array of object er khetre o kora jay $elemMatch use kore 
+db.test.find({
+    skills:{$elemMatch:
+        {
+          "name": "PYTHON",
+                "isLearning": false   ,
+        }
+        }
+}).project({skills:1})
+   
