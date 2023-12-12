@@ -1,0 +1,5 @@
+aggeregation: dhape dhape akakta stage par kore finally akta obosthay asake aggregation bole. (akta tavel group jekhane bivinno problem er jnno kisu jon bad glo.....finally ticket limit er jnno age dia sort kore kisu bad dia holo)
+
+formal definition: aggregation is a way of processing a large number documents in  a collection by means of passing themthrough different stages.
+The stages make up what is known as pipeline.
+the stages in a pipeline can filter,sort,reshape,modify,group the documents that passes through the pipeline.

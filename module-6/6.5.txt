@@ -1,0 +1,22 @@
+$unwind: we cannot work directly on the elements of an array within a document with stages such as $group. The $unwind stage enable us to work with the values of the fields within an array.
+unwind kore array er sob element ke alada alada document kore felbe.er seguloke group korbe.
+exm: 
+db.test.aggregate([
+    {
+        $unwind:"$friends"
+    },
+    {
+        $group:{_id:"$friends",count:{$sum:1}}
+    }
+    ])
+
+=> age onujaye kon kon friend ase sta bujhte 
+exm:
+db.test.aggregate([
+    {
+        $unwind:"$friends"
+    },
+    {
+        $group:{_id:"$age",friendsPerAge:{$push:"$friends"}}
+    }
+    ])

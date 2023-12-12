@@ -1,0 +1,38 @@
+=>id null nile puro collection er sob document ke akta id er under e nia ase.
+exm:
+db.test.aggregate([  
+    {
+        $group:{_id:null, getTotalSalary: {$sum:"$salary"}}
+    }       
+    ])
+*ekhane getTotalSalary object ta dia sob gulo document er vitor je salary field ta ase tar value er jogfol  dekhaise.
+
+=> max,min,avg o ber kora jay
+db.test.aggregate([ 
+    {
+        $group:{_id:null, getTotalSalary: {$sum:"$salary"},
+            maxSalary:{$max:"$salary"},
+            minSalary:{$min:"$salary"},
+            avgSalary:{$avg:"$salary"},
+        }
+    }    
+    ])
+
+=> $project use kore amra field gulor customize name dite pari
+db.test.aggregate([
+    {
+        $group:{_id:null, getTotalSalary: {$sum:"$salary"},
+            maxSalary:{$max:"$salary"},
+            minSalary:{$min:"$salary"},
+            avgSalary:{$avg:"$salary"},
+        }
+    },
+    {
+        $project:{
+            maxisalary:"$maxSalary",
+            minisalary:"$minSalary",
+            averagesalary:"$avgSalary",
+        }
+    }      
+    ])
+  

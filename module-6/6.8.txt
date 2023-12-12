@@ -1,0 +1,29 @@
+=>kokkhn data embed korbo:(embed means array akare data gulo rakha.jemon shopping korte gia amader order gulo akta akta kore product array er vitor embed hoite thake.)
+1.one to one relationships
+2.frequent reading data
+3.atomic updates
+4.reduce network overhead
+5.small data size.
+
+
+=>kokkon data reference korte hbe:(reference daata er khetre alada kore order collection banaite hbe.sekhane protita order er id er sathe user er id er akta link up korte hbe.atakei reference bole.)
+1.one to many relationship.
+2.many to many
+3.frequently writing.
+4.big data size.
+5.scalability(data guloke seperate vabe rakhbo)
+6.flexibility
+
+=> test collection er sathe order collection er akta reference toiri korbo.test e sob user collection thakbe and order e sob order collection thakbe. kono akta user er sob order amra $lookup dia dekhbo.
+exm:
+db.Orders.aggregate([
+    {
+        $lookup: {
+               from: "test",
+               localField: "userId",
+               foreignField: "_id",
+               as: "user"
+             }
+    }
+    ])
+

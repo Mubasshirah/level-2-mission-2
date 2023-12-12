@@ -1,0 +1,47 @@
+$bucket: boudary kore dia jay ai stage use kore. jemon age er khetre 0-19 and 20 boundary,21-39 and 40 boundary amne kora jay
+exm:
+db.test.aggregate([
+   {
+       $bucket: {
+            groupBy:"$age",
+            boundaries:[20,40,60,80],
+            default:"80 up",
+            output:{
+                count:{$sum:1},
+                jaraAse:{
+                    $push:"$name"
+                }
+                
+            }
+           }
+   }
+    ])
+ **$sort and $limit use korte pari. $sort dia ascending and descending order kora jay. and limit use kore koekta document show korbe sta dekha jay.
+ db.test.aggregate([
+    {
+        $bucket: {
+            groupBy: "$age",
+            boundaries: [20, 40, 60, 80],
+            default: "80 up",
+            output: {
+                count: { $sum: 1 },
+                jaraAse: {
+                    $push: "$name"
+                }
+
+            }
+        }
+    },
+    {
+        $sort:{
+            count:-1
+        }
+    },
+    
+    {
+        $project: {
+            count:1,jaraAse:1
+        }
+    }
+])
+

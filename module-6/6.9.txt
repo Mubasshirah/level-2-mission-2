@@ -1,0 +1,11 @@
+indexing: atar concept puro puri boi er suchipotro or index er moto.er maddhome faster query kora jay.
+
+=> Two way of scanning:
+1.normal scan or callscan(line by line or page by page scan)
+2.ixscan or indexscan(kono akta field er index kore rakhle page by page or line by line scan korte hbena.index dekhe sorasori oi page e chole jaua jbe). faster query kora jay.
+
+*IDHACK special type of indexing.
+*document guloke id dia search korle mongodb IDHACK dia khub druto information provide kore.
+=>single index: single field er upor indexing.
+exm: index na kore email dia search korle collscan kore .tai time lage data paite.ar email dia index kore search korle onk kom time e data paua jay.
+*noSQL booster e index create kora hoise:db.getCollection("massive-data-collection").createIndex({email:1})

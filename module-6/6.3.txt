@@ -1,0 +1,60 @@
+$group: kono akta field er different value nia group hoa. jemon gender er vitor male, female hoite pare .tai group duita
+exm:
+db.test.aggregate([
+    {
+        $group:{_id:"$gender"}
+    }
+    ])
+exm:
+db.test.aggregate([
+   
+    {
+        $group:{_id:"$address.city"}
+    }
+    ])
+exm: age er upor vitti kore grouping korajay .sei khetre count nam e akta jiis bole dite hoa. jate kono  age er koyjon kore manush ache seta bujha jay.
+db.test.aggregate([
+   
+    {
+        $group:{_id:"$age",count:{$sum:1}}}
+    ])
+
+exm: 
+db.test.aggregate([  
+    {
+        $group:{_id:"$gender",count:{$sum:1}}}
+    ])
+
+=> $push: kono akta group er under document gulor kono akta field er value dekhaite ata use hoa.
+db.test.aggregate([
+    {
+        $group:{_id:"$gender",count:{$sum:1}, showName:{$push:"$name"}}
+    }
+    ])
+
+=>$$ROOT: kono akta group er under e sob gulo document er sob field dekhaite ata use hoa.
+db.test.aggregate([
+    {
+        $group:{_id:"$gender",count:{$sum:1}, fullDoc:{$push:"$$ROOT"}}}
+    ])
+  
+**count, showName agulake accumulator object bole.
+
+=> full document na dekhe only koekta field dekhte chaile $project use korte hbe. sathe fullDoc. dia oi field gulor name bole dite hobe.
+
+exm:
+db.test.aggregate([
+   
+    {
+        $group:{_id:"$gender",count:{$sum:1}, fullDoc:{$push:"$$ROOT"}}},
+        {
+            $project:{
+                "fullDoc.name":1,
+                "fullDoc.email":1,
+                "fullDoc.phone":1,
+            }
+        }
+    ])
+
+  
+  

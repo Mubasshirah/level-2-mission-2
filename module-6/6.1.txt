@@ -1,0 +1,23 @@
+=> find er moto aggregate dia o akta collection er vitor thk nirdisto kichu documents ke paua jay.
+exm1: db.test.aggregate([
+    {
+        $match:{
+            gender:"Male"
+        }
+    }
+    ])
+
+exm2: db.test.aggregate([
+    {
+        $match:{
+            gender:"Male", age:{$lt:30}
+        }
+    },
+    {
+        $project:{
+            name:1,age:1,gender:1
+        }
+    }
+    ])
+*$project alz pore call korte hbe.
+
