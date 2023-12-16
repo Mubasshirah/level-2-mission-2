@@ -1,0 +1,6 @@
+built in module: jegula node.js provide kore 
+text read or write kora hoise: text folder and file.js e 
+
+*synchronous way blocking behave kore.fole keu file read korar moto boro kaj er request korle sta node js process korte onk time nay, fole onno kro request accept korte parena. tai file system er moto boro kaj handle korar somoy asynchronous way te kora uchid. karon jehetu node js single thread e kaj kore,tai heavy kaj asle se agula nije handle na kore thread pool e pathay day and nije onnoder rqst handle kore.
+
+asynchronous read and write: async.js , read.txt , write2.txt 

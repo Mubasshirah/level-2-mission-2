@@ -1,0 +1,30 @@
+node.js: js ke invent kora hoisilo browser e run korar jnno. server site e js ke use kora jaitona. v8 engine ke use kore node.js invent hoisilo js ke serrver site e use korar jnno.
+node.js modules:
+operating system module(os)
+file system module(fs)
+path module(path)
+http module(http)
+url module(url)
+utilities module()
+
+why node.js:
+1.can use js in server side.
+2.highly scalable backend application.
+3.single threaded,event driven,non blocking,
+4.perfect for data intensive and streaming application.
+
+demerits:hightly cpu intensive tasks.process ke onk besi blocking kora lage.but worker thread er maddhome amra highly cpu intensive kaj guloke efficient way te korte pari.
+
+
+node.js architecture:
+-> dependencies of  node.js: v8 engine and libuv
+libuv: is an open source libray written on c++ which focuses on asynchronous i/o and give node access to the computer os, file systems , networking etc.
+
+libuv implements two important tasks:
+event loop 
+thread pool 
+ event loop: execute callback fucnction, networking i/o
+ thread pool:cpu intensive tasks, file access, file compression, cryptography 
+
+
+ node.js process: node.js single thread e kaj kore. tobe heavy task asle seguli thread pool e pathay day.kaj ses hole abar single thread er maddhome client site e pathay day.

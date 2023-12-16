@@ -1,0 +1,24 @@
+->req.param : jokhon dynamic vabe kisu search korbo tokhon ata use hoa.
+    app.get('/:userId/:subId', (req:Request, res:Response) => {
+    console.log(req.params);
+  res.send('Hello dudebroishgfdf!')
+});
+->ar postman e get select kore->http://localhost:5000/56/100
+
+->req.query:(query param "?") kono kichu khuje paite ata use korbo.jemon email.
+   app.get('/', (req:Request, res:Response) => {
+    console.log(req.query);
+  res.send('Hello dudebroishgfdf!')
+});
+->ar postman e get select kore ->http://localhost:5000?email=adiba@gmail.com&name=adiba
+
+
+=>middleware: like ghotok. middle man ...er req and res e access ase.er concept hoilo request asar por ser tar kaj kormo gulo kore and  next middleware e pathay day next() function ta call kore.
+middleware req er moddhe jdi kono kisu check korar dorkar pore(like jwt token..) tahole se seta kore.erpor se seta tar next middleware e pathay dey. app.get or app.post o ak dhoroner middleware.
+*middleware sobchey besi authentication purpose  e use hoa. 
+->exm of middleware:
+const logger=(req:Request,res:Response,next:NextFunction)=>{
+    console.log(req.method,req.url,req.hostname);
+    next();
+}
+

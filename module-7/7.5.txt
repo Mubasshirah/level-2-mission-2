@@ -1,0 +1,17 @@
+stream: is a process where one is flowed from one place to another.
+is used to process a data piece by piece and send it one by one.
+buffer:onkgulo piece nia akta buffer gothito hoa.
+exmple: jokhon youtube e amra akta videp dekhi tokhon seta full load houar por kintu dekhano start korena. rather interner speed er upor base kore load hoite thake and dekhaite thake. atai streaming(piece by piece data ke divide kore). jokhon internet speed kome jay tokhon data load hoana and buffer kore. 
+*onk gulo piece nia akta buffer gothito hoa.
+
+=>node.js faster karon atate streaming and buffering hoa. onk boro memeory lagena.ektu kore data load kore memory te save kore sta ber kore dia hoa.abar notun buffer load kora hoa.
+
+=>different types of streaming;
+1.readable:stream to read data
+2.writable:stream to write data
+3.duplex:stream for read  and write
+4.transform: stream to reshape data.
+
+=> ager video te (7.4.txt) je  file read korechilam setate read er sathe write oto druto hoite parena. sei khetre amra sekhane stremaing use korte pari. orthat ektu kore read hbe sathe setuk write hbe. arektu read hbe abar otuk write hbe.
+
+=> making own server and straming a file: stream-buffer.js 

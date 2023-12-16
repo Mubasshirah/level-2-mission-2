@@ -1,0 +1,21 @@
+=>jehetu node  typescript ke bujhte parena tai ts file gulo ke js e convert korte hbe. noeto run korte  gle error dibe.
+-> ajnno vs code command tsc 
+->tahole dist er vitor app.js and server.js chole asbe.
+->erpor run korte node dist/server.js dibo.
+-> ts file e res.send e kisu change kora hoile auto jate js file ei change hoe jay sejonno akta command dite hbe tsc -w. noeto output e update ta show korbena. tobe sei khetre barbar server ta run korte hbe.ai problem ta thk bachte dev dependency hisebe nodemon install korbo.tahole nodemon jokhoi js kono change dekhte parbe se server take restart kore dibe.
+->nodemon install korte vs code e command npm add -D nodemon .
+->erpor package.json e gia scripts er vitor  "start:dev":"nodemon dist/server.js" ata dibo.
+->req,res duitari type bole dite hbe. type gulo express thk asbe. "req:Request, res:Response"  ata likhbbo.
+
+*jehetu client hisebe kono frontend nei tai amra "client" hisebe akta tool use korbo jetar name postman.
+*localhost e frontend thk amra sudhu get request pathaite pari. but kono kisu post korte chaile amra localhost thk parbina.
+
+->erpor amra akta post method banbo and postman thk sta rcv korbo.
+
+-> postman e gia post->body->raw->json select korbo. then send button e click korle amader vs code er terminal e sta show korbe.
+-> data post korte amader express.json parser ta use korte hbe. "app.use(express.json())". noeto ja post korbo postmann thk seta terminal e show korbena.
+->data text akare pathaite chaile "app.use(express.text())" ai parser ta use korte hbe.
+
+-> amra response keu json akare pathaite parbo. sejonno res.send er jaygay evabe likhbo res.json({
+    message:"data got"
+})

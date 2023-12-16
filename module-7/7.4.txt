@@ -1,0 +1,4 @@
+event driven architecture:
+event emitter->event listener->callback
+*kono event emit hoile event listener seta and sathe sathe call back korbe. atai event driven architecture
+birthday event exmple: event-emitter.js e

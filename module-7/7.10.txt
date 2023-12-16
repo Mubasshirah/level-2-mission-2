@@ -1,0 +1,59 @@
+express error handle:
+->express by default html wala akta error day.
+->error handle korte amra try catch use korbo jehety besirvag somoy amra asynchronous operation korbo. fole server crash na kore ki error hoise seta show korbe.
+exmple of error handling:
+// express error handling
+app.get('/',logger, async(req:Request, res:Response) => {
+    try{
+        res.send(something);
+    }catch(error){
+console.log(error);
+res.status(400).json({
+    success:false,
+    message:"failed to get data"
+})
+    } 
+});
+// express error handling
+
+=>amra global error handler use kore o error handling korte pari.
+error handler gulo sob gulo route er sese gia korte hbe.noeto route gulo bujte parbena.
+
+app.get('/',logger, async(req:Request, res:Response,next:NextFunction) => {
+    try{
+        res.send(something);
+    }catch(error){
+console.log(error);
+next(error);
+
+*nicher part tuku na likhe global error handler er vitor aigula dia just next function er vitor agula dia app.get thk function take call kore dite hbe.
+// res.status(400).json({
+//     success:false,
+//     message:"failed to get data"
+// })
+    } 
+});
+
+// global error handler
+app.use((error:any,req:Request,res:Response,next:NextFunction)=>{
+    if(error){
+        res.status(400).json({
+            success:false,
+            message:"data getting failed"
+        })
+
+    }
+})
+// global error handler
+
+=> jdi amn kono route e jaua hoa jta exist e korena sei khetre akta universal handler use kora jay .vul route dilei ai msg show korbe.sob route er sese ata banaite hbe,
+
+app.use("*",(req:Request,res:Response)=>{
+    console.log("route not found")
+res.status(400).json({
+    success:false,
+    message:"route not found"
+})
+})
+
+

@@ -1,0 +1,25 @@
+routing: amra jokhon boro project korbo tokhon ak file er vitor get, post, patch korbona. differrent file thk import korbo.
+*express.router() use kore amra different router object toiri korte parri.
+middleware:
+const userRouter=express.Router();
+app.use('/api/v1/users',userRouter);
+userRouter.post('/create-user',(req:Request,res:Response)=>{
+    const  user=req.body;
+    console.log(user);
+    res.json({
+        success:true,
+        message:"user created successfully",
+        data:user
+    })
+})
+const courseRouter=express.Router();
+app.use('/api/v1/courses',courseRouter);
+courseRouter.post('/create-course',(req:Request,res:Response)=>{
+    const  course=req.body;
+    console.log(course);
+    res.json({
+        success:true,
+        message:"course created successfully",
+        data:course
+    })
+})

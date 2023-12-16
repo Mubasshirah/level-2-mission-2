@@ -1,0 +1,36 @@
+express.js:framework of node.js
+->first e file manager e gia akta folder open: module-7-project-express-1
+->erpr file thk cmd open
+->cmd te npm init dia enter dia dia "is it ok"porjnto asa 
+->code .kora
+->erpr vs code e npm install express dia
+=>erpr vs code e npm add -D typescript dia
+->erpr vs code e tsc --init dia
+-> erpor vs code src folder er vitor app folder banaite hbe and src folder er vitor duita file app.ts and server.ts banaite hbe.
+erpor vs code e dist folder banabo
+-> er por tsconfig.json file e rootdir:"./src/" and outdir:"./dist" dibo.
+->erpor express er website e gia helloworld thk code copy kore app.ts e paste korbo.
+->erpr vs code e npm i --D  @types/node dibo.
+-> erpor app.ts e 'const express = require('express')' atuk bad dia 'import express from 'express'' ata dibo.
+->erpr vs code npm i --D  @types/express dibo.
+->erpor
+ app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})
+aipart tuku app.ts thk cut kore server.ts e paste korbo .and app ke app.ts thk export kore server.ts w import korbo.
+->erpr server.ts e const PORT=5000dibo and port kePORT dia convert korbo.
+->erpor server.ts e amra akta server banabo.
+->server banaite ai kaj ta korbo:
+import {Server} from 'http';
+let server:Server;
+async function Bootstrap(){
+    server=app.listen(PORT, () => {
+        console.log(`Example app listening on port ${PORT}`)
+      })  
+}
+// nicher part tuku function er vitor nia jabo.
+// app.listen(PORT, () => {
+//     console.log(`Example app listening on port ${PORT}`)
+//   })
+Bootstrap();
+

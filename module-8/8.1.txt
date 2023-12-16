@@ -1,0 +1,12 @@
+mongoosh: a powerful object data modelling for mongoDB. object ke data er moto kore modelling kora
+=> different unstructured data mongodb te rakhte pari. 
+like name, age or name,age,gender or name,age 
+=> amn unstructured database thk data query kora ta khub jhmela. tai amra mongoosh library use kori,
+=> jemon amra normal people ra jodi akta senabahini area te dhukte chai tahole amader senabahini atke dibe. only senabahini er lokrai sekhane entry pabe. thik serokom mongoosh o mongodb er upor akta layer er moto kajj kore. jei type er data structure dia thkbe client jdi sei type data input day only tokhoni mongoosh client ke database e entry dive,
+=> why we should use mongoosh:
+schema definition
+model creation
+data validtion
+querying
+middleware support
+population

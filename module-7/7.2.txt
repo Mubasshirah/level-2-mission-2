@@ -1,0 +1,22 @@
+module: is an isolated and reusable block of code that has its own scope.
+*var global scope toiri kore...and let const use korle different file same  name e variable decleare korle conflict toiri kore.ajnno global scope thk functional scope use kora hoa. jemon iife use kora jay.but ateu problem hoa large scale application e. ajnno modular system use kora hoa.
+modualr system: akta peace of code ke akta alada isolated environment e nia jay.
+
+modular system e amra duita jinis use kori.
+common.js -> server site onk besi use kori 
+esm module-> react e use hoa.
+
+node.js er 14 version thk amra esm module use kori
+common.js and esm module er vitor kisu difference ase.
+1.common.js-> require syntax use hoa where esm-> import syntax use hoa.
+2.common.js-> kisu export korte chaile export/module.export use kori whereas esm->e export default korte hoa.
+3.common.js-> nodeer khetre .js use kori whereas esm-> e .mjs syntax use hoa.
+
+=>modular system e tin dhoroner module use kori:
+1.local module(we create)
+2.built in module(provide by node.js)
+3.third party module(developed by others)
+
+
+=>local module er use: module-7-learning-node -> index.js,local-1.js,local-2.js 
+=>builtin module er use: module-7-learning-node-> built.js 
