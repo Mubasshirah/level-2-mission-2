@@ -1,0 +1,11 @@
+erpor app.ts e gia ai kaj gulo korbo 
+/ application routes
+// api/v1/students/create-student ai route e jbe tokhon se akta student e data insert korte parbe. karon ata post metho..abar StudentRoute e get method o hoite pare. "/api/v1/students" atuk common thakbe,
+// kono client ai
+app.use('/api/v1/students', StudentRoute);
+
+erpor server take chalu korbo
+erpor postman egia chatgpt thk model onujaye data banaye {} er vitor "student" name e akta object banaye chatgpt er data paste kore, send korbo.
+
+mongoDB atlas thk amra dekhte parbo.noeto  mongoDB compass e gia DATABASE_URL ta paste kore connect kore okhaneu dekhte parbo.
+

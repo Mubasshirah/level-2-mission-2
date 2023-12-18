@@ -1,0 +1,74 @@
+create get student route
+route->controller->service->controller->client
+
+abar ulta pattern eu korajay 
+route <- controller <- service
+
+erpor student.service.ts e gia  ata banabo
+// akhn akta fn banabo database thk sob student info pauar jonno.
+const getALlStidentsFromDB=async()=>{
+    const result=await StudentsModel.find();
+    return result;
+}
+and getALlStidentsFromDB ke  export kore dibo
+
+
+erpor student.controller.ts e gia ata banabo
+// controller fn banabo student er data service thk paia route e diar jnno
+const getStudentData=async(req:Request, res:Response)=>{
+    try{
+      const result=await studentServices.getALlStidentsFromDB();
+      res.status(200).json({
+        success:true,
+        message:"student data got successfully",
+        data:result
+      })
+    }catch(err){
+        console.log(err);
+    }
+}
+
+and getStudentData ke  export kore dibo route thka access korte parar jnno
+
+erpor student.route.ts e gia likhbo
+//student data get korar jnno akta route banabo
+router.get('/', StudentController.getStudentData);
+
+
+erpor postman e gia root route thk data get korbo.http://localhost:5000/api/v1/students
+
+
+student.service.ts e gia erpor id dhore single student er info ber korte nicher code likhbo
+// / akhn akta fn banabo database thk akta specific id er  student info pauar jonno.and seta export korbo.
+const getSingleStudentFromDB=async(id:string)=>{
+    const result=await StudentsModel.findOne({id});
+    return result;
+}
+
+
+erpor student.controller.ts e gia ai code dibo
+// controller fn banabo single student er data service thk paia route e diar jnno and seta export korbo.
+const getSingleStudentData=async(req:Request, res:Response)=>{
+    try{
+        const {studentId}=req.params;
+      const result=await studentServices.getSingleStudentFromDB(studentId);
+      res.status(200).json({
+        success:true,
+        message:"single student data got successfully",
+        data:result
+      })
+    }catch(err){
+        console.log(err);
+    }
+}
+
+
+erpor student.route.ts e gia ata dibo
+router.get('/:studentId', StudentController.getSingleStudentData);
+
+
+erpor postman thk kono akta id dia send korbo http://localhost:5000/api/v1/students/123456
+
+erpor github e push korar age lint o prettier dia check korbo
+npm run lint
+npm run prettier 

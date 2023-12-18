@@ -1,0 +1,66 @@
+project e installation step by step 
+code .
+
+npm init -y
+
+npm install express
+
+npm install mongoose --save
+
+npm install typescript --save-dev (ts ke dev dependency hisebe install korbo.karon diin sese typescript javascript e rupantor hbw)
+
+npm i cors (jehetu amra client thk server ke alada rakhbo.tai server e client er url ta include korte hbw.jte kore cors er issue na hoa.)
+
+npm i dotenv (environment variable gulo rakhar jnno amra ai package install dibo jat e kore amra env variable gulo access korte pari.)
+
+tsc -init 
+
+ "rootDir": "./src",  
+ "outDir": "./dist",    
+
+ make folder src->app.ts and server.ts
+
+ package.json e-> script er upor build:tsc dibo-> then npm run build-> tahole dist->app.js create hbe.
+
+ server.ts e bosabo-> app.ts thk etuk cut kore ene 
+ app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)})
+***server ke run korte gele je je connectivity dorkar sob amra server.ts e korbo.
+
+erpr mongosh thk nicher code tuku copy kore server.ts e bosabo
+const mongoose = require('mongoose');
+async function main() {
+    await mongoose.connect('mongodb://127.0.0.1:27017/test');
+   // use `await mongoose.connect('mongodb://user:password@127.0.0.1:27017/test');` if your database has auth enabled
+  }
+
+erpr root e .env name akta file banaye mongodb thk copy kora part ekhane paste korbo.
+PORT=5000
+DATABASE_URL=mongodb+srv://<username>:<password>@cluster0.lilwv8k.mongodb.net/?retryWrites=true&w=majority;
+
+erpor mongoDB te gia user banabo.
+database access e gia name password built in role dia user banabo.
+
+erpr .env te gia DATABASE_URL e name and password and project name ta bosabo.
+
+erpr src->app->config->index.ts banabo.
+
+erpr index.ts e->
+import dotenv from 'dotenv';
+
+erpr app.ts er vitor console.log(process.cwd())
+
+erpr npm run build dibo,fole dist er vitor ts file gulor js file create hobe, and ts file e kono change korleu a command ddite hbe jate js file e update hoe jay.
+
+erpr node dist/app.js dibo
+
+erpr index.ts er vitor nicher code tku likhbo:
+import path from 'path';
+dotenv.config({path: path.join((process.cwd(),'.env'))});
+export default {
+    port:process.env.PORT,
+    database_url:process.env.DATABASE_URL
+}
+
+erpor mongodb atlas e gia network access e gia add ip address e gia allow access from everywhere. 
+

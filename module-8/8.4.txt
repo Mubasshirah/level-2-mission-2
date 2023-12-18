@@ -1,0 +1,73 @@
+.eslintrc.json e gia kisu rules set korbo:
+"rules": {
+        "no-unused-vars": "error",
+        "no-unused-expressions":"error",
+        "prefer-const":"error",
+        "no-console":"warn",
+        "no-undef":"error"
+    }
+
+.eslintrc.json e gia global variable set kore dibo. npm run lint dile ar "no-undef" error dibena.
+ "globals":{
+        "process":"readonly"
+    }
+
+
+PRETTIER:
+
+
+command line e npm install --save-dev prettier dibo prettier install korte.
+
+root e .prettierrc.json name e akta file banaye felbo.
+
+.prettierrc.json e gia 
+{
+    "semi": false, 
+    "singleQuote": true
+}
+ata paste korbo.
+
+
+kono akta kisu pretty korte npx prettier --write src/app.ts ai command dibo
+*app.ts e gia line gulor majhe onk gap disi,tai seta thik korte src/app.ts disi.jokhon jei file ke pretty korbo sei file er name dibo.
+
+package.json e gia script e prettier run korte likhbo 
+"prettier": "prettier --ignore-path .gitignore --write \"./src/**/*.+(js|ts|json)\""
+
+and ksu pretty korte command dibo 
+npm run prettier  and npx prettier --write src/app.ts ata tokhon ar use korar dorkar hobena.
+
+erpor vs code er setting e gia paste korbo
+"editor.defaultFormatter": "esbenp.prettier-vscode",
+"editor.formatOnSave": true,
+
+
+**code likhar somoy e pretier and eslint e subidha pauar jnno amra vscode extensions install dite pari.
+
+to Avoid conflicts when working with ESLint and Prettier 
+command line e paste korbo npm install --save-dev eslint-config-prettier
+
+erpor .eslintrc.json e gia extends er jayhay paste korbo 
+"extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended", "prettier"],
+
+bar bar npm run build kore then node/nodemon dia run kora akta jhamela.
+aijnno amra ts-node-dev install korbo tahole ato jhamela hbena. tobe ata producton e kaj korbena only development stage e kaj korbe.
+npm i ts-node-dev --save-dev
+
+erpor ai command dibo server chalu korar jnno
+ts-node-dev --respawn --transpile-only src/server.ts
+
+bar bar aita na likhe package.json e gia akta script banay felbo. akta production er jnno ar akta development er jnno.
+
+final task .env te gia 
+NODE_ENV=development likhbo (development stage e)
+ar jokhon production stage e jabo tokhon likhbo 
+NODE_ENV=production
+
+
+
+
+
+
+
+

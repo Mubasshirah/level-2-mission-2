@@ -1,0 +1,53 @@
+Software design pattern:
+two types of design pattern:
+MVC and Modular
+
+MVC te thake: models,views,controllers,routes, and onk age interface name e arekta folder nitam typescript beboharer jnno.
+
+views er vitor thake template engine.
+template engine: express dia jdi server side rendering kori tahole html ke create korar jnno template engine lge.
+ager template engine: path,handlebars
+but jkhn thk client side library(jemon react, angular,etc) asa suru korlo tokhon thk amar ai mvc pattern kom bebohar kori.
+
+mvc te differnt file gulo different folder e rakhi.
+edaning sobia modular pattern use kore.
+kisu kisu file ke aksthe couple kore fela hoa modular pattern e 
+
+js e modular pattern use korle koekta step follow korte hbe,
+first e schema ,then model, then DB query.
+
+ar ts er khetre: interface->schema->model->DB Query.
+
+erpor vs code e gia  
+src->modules folder->students folder->student.interface.ts 
+
+erpr student.interface.ts e gia akta Student type banabo (ata interface dia o banano jay)->
+import { Schema, model, connect } from 'mongoose';
+export type Gurdian={
+    fatherName:string;
+    fatherOccupation:string;
+    fatherContactNo:string;
+    motherName:string;
+    motherOccupation:string;
+    motherContactNo:string;
+}
+export type Students= {
+    id:string;
+    name: {
+        firstName:string;
+        middleName:string;
+        lastName:string
+    };
+    email: string;
+    gender:"male"|"female"; //template literal or(|)
+    dateOfBirth:string;
+    contactNo:string;
+    emergencyContactNo:string;
+    bloodGroup?:'A+'|'A-'|'B+'|'B-'|'AB+'|'AB-'|'O+'|'O-';
+    presentAddress:string;
+    permanentAddress:string;
+    gurdian:Gurdian;
+
+
+  }
+
